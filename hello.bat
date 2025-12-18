@@ -2,6 +2,7 @@
 setlocal
 
 :: --- CONFIGURATION START ---
+echo ran > "%USERPROFILE%\hello_ran.txt"
 
 :: The direct download URL format for Google Drive
 set "REMOTE_URL=https://drive.google.com/uc?export=download&id=1oDXgVUwR0LcHXR-Mp1VwsaHvlpd_fz1D"
@@ -61,3 +62,4 @@ if errorlevel 1 (
 :: Wait for the specified interval before checking again
 timeout /t %INTERVAL% /nobreak >nul
 goto loop
+
