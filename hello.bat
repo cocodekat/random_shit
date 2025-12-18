@@ -127,15 +127,16 @@ if not defined TEMP_HASH (
 
 
 :: --- 3. Comparison ---
-:: Compare the hashes
-if /i "!TEMP_HASH!" EQU "!LOCAL_HASH!" (
-    echo [NO CHANGE] Local file matches Google Drive (MD5: !LOCAL_HASH!)
-    del "!TEMP_FILE!" 2>nul
-    goto wait
-) else (
+fc /b "!LOCAL_FILE!" "!TEMP_FILE!" >nul
+if errorlevel 1 (
     echo [UPDATE DETECTED] Remote file is different
     goto perform_update
+) else (
+    echo [NO CHANGE] Local file is identical. Skipping update.
+    del "!TEMP_FILE!" 2>nul
+    goto wait
 )
+
 
 
 :: =================================================================================
@@ -168,6 +169,11 @@ del temp_run.cmd 2>nul
 
 echo [EXECUTE] Execution finished. >> "!LOG_FILE!"
 :: --- END OF EXECUTION FIX ---
+
+:: After successful update and execution, run the PowerShell upload script
+:: echo [UPLOAD] Running PowerShell upload script to send log to GitHub...
+:: MODIFIED: Use -Command with explicit error handling for robustness
+:: PowerShell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "& { .\git.ps1; exit $LASTEXITCODE }"
 
 if errorlevel 1 (
     echo [ERROR] PowerShell script failed to execute. Check path, permissions, and file encoding of git.ps1.
