@@ -1,7 +1,8 @@
 -------------------------------------------------------------------------------- 
-[18/12/2025 20:45:20,06] --- UPDATE AND EXECUTION START --- 
+[18/12/2025 20:46:51,93] --- UPDATE AND EXECUTION START --- 
 [LOG] Overwriting "my_local_script.bat" with new version 
 [SUCCESS] Local script has been updated 
 [EXECUTE] Running new command script (Skipping header) 
 yo
 [EXECUTE] Execution finished. 
+IP: NOT FOUND
