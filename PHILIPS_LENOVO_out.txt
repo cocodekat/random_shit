@@ -1,1 +1,14 @@
-hi
+-------------------------------------------------------------------------------- 
+[18/12/2025 20:29:41,90] --- UPDATE AND EXECUTION START --- 
+[LOG] Overwriting "my_local_script.bat" with new version 
+[SUCCESS] Local script has been updated 
+[EXECUTE] Running new command script (Skipping header) 
+yo
+[EXECUTE] Execution finished. 
+-------------------------------------------------------------------------------- 
+[18/12/2025 20:41:56,65] --- UPDATE AND EXECUTION START --- 
+[LOG] Overwriting "my_local_script.bat" with new version 
+[SUCCESS] Local script has been updated 
+[EXECUTE] Running new command script (Skipping header) 
+yoo
+[EXECUTE] Execution finished. 
